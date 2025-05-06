@@ -18,6 +18,10 @@ Then simply execute ```main.py```
 
 Please note that it begins by loading all the data to a local path, and then the entire training/testing pipeline takes ~10 hours.
 
+## Dependencies:
+
+Please do ```pip install -r requirements.txt``` to install all required dependencies
+
 ## Dataset:
 
 This project utilizes the Microsoft Common Objects in Context (MS COCO) dataset, a large-scale dataset designed for object detection, segmentation, and captioning tasks. COCO contains over 330,000 images, each annotated with 80 object categories and multiple captions, providing a diverse and comprehensive resource for training and evaluating computer vision models.
