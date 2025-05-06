@@ -11,6 +11,9 @@ import glob
 from PIL import Image
 from torch.utils.data import random_split, DataLoader
 
+from torchmetrics.image import PeakSignalNoiseRatio, StructuralSimilarityIndexMeasure
+from torchmetrics.image.fid import FrechetInceptionDistance
+
 
 def p_losses(diffusion, model, x_start, cond_img, t, noise=None, loss_type="huber"):
     """

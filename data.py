@@ -46,39 +46,6 @@ def apply_gamma(img, gamma=2.5):
     table = table * 3  # For all RGB channels
     return img.point(table)
 
-
-RAW_DOWNLOAD_DIR = "/Users/rohan/fiftyone/coco-2017/train/data"
-RAW_DRIVE_DIR = "raw"
-OUT_ROOT    = "filters"
-FILTERS     = ["solarize","sepia","cool","warm","gamma"]
-
-
-for fname in tqdm(os.listdir(RAW_DOWNLOAD_DIR)):
-    img_path = os.path.join(RAW_DOWNLOAD_DIR, fname)
-    try:
-        img = Image.open(img_path).convert('RGB')
-    except:
-        continue
-
-    for f in FILTERS:
-        if f == 'solarize':
-            filt_img = apply_solarize(img)
-        elif f == 'sepia':
-            filt_img = apply_sepia(img)
-        elif f == 'cool':
-            filt_img = apply_cool(img)
-        elif f == 'warm':
-            filt_img = apply_warm(img)
-        elif f == 'gamma':
-            filt_img = apply_gamma(img, gamma=1.5)
-
-        # save filtered image as input
-        in_path = os.path.join(OUT_ROOT, f, fname)
-        filt_img.save(in_path, format='JPEG')
-
-        out_path = os.path.join(RAW_DRIVE_DIR, fname)
-        img.save(out_path, format='JPEG')
-
 def show_samples():
     all_files = [f for f in os.listdir(RAW_DRIVE_DIR) if f.lower().endswith(('.jpg','.jpeg','.png'))]
     selected = random.sample(all_files, 5)
