@@ -16,7 +16,7 @@ Open `main.py` and modify the following line to point from your home directory:
 
 Then simply execute ```main.py```
 
-Please note that it begins by training all the data to a local path, and then the entire training/testing pipeline takes ~10 hours.
+Please note that it begins by loading all the data to a local path, and then the entire training/testing pipeline takes ~10 hours.
 
 ## Dataset:
 
